@@ -28,9 +28,9 @@ var GrowingList = React.createClass({
     }
   },
   render: function () {
-    var boundAddFunction = this.addListItem.bind(this);
+    var boundAddFunction = this.addListItem;
     var itemElements = this.state.items.map(function (item) {
-      return <GrowingListItem num={item.num} addListItem={boundAddFunction} />;
+      return <GrowingListItem key={item.num} num={item.num} addListItem={boundAddFunction} />;
     });
     return (
       <ul>{itemElements}</ul>
